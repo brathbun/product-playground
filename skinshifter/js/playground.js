@@ -30,6 +30,14 @@ $(document).ready(function(){
 	   $('#bottomexp').css('height', ''+ botexpheight +'px');	   
 	}
 
+	if (width < '400') {
+	   $('#bottompanel').html('<img CssClass="botimage" src="img/skinbottom_col2.jpg" width="100%" />');
+	}
+
+	if (width >= '400') {
+	   $('#bottompanel').html('<img CssClass="botimage" src="img/skinbottom_col.jpg" width="100%" />');
+	}	
+
  	$('#bottompanel').click(function(){
  		$('#bottomexp').slideDown('slow');
  		$('#bottompanel').slideUp('slow');
@@ -74,6 +82,14 @@ $( window ).resize(function() {
 	   var ratio = 225/1000;
 	   var botexpheight = botexpwidth * ratio;	   
 	   $('#bottomexp').css('height', ''+ botexpheight +'px');
+	}
+
+	if (width < '400') {
+	   $('#bottompanel').html('<img CssClass="botimage" src="img/skinbottom_col2.jpg" width="100%" />');
+	}
+
+	if (width >= '400') {
+	   $('#bottompanel').html('<img CssClass="botimage" src="img/skinbottom_col.jpg" width="100%" />');
 	}
 
 });
