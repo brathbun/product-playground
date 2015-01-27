@@ -71,7 +71,7 @@ p,h2,h3 {
 }
 
 #bottompanel {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     height: 90px;
@@ -80,7 +80,7 @@ p,h2,h3 {
 }
 
 #bottomexp {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     height: 225px;
