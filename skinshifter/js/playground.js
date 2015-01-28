@@ -30,11 +30,11 @@ $(document).ready(function(){
 	   $('#bottomexp').css('height', ''+ botexpheight +'px');	   
 	}
 
-	if (width < '400') {
+	if (width < '500') {
 	   $('#bottompanel').html('<img CssClass="botimage" src="img/skinbottom_col2.jpg" width="100%" />');
 	}
 
-	if (width >= '400') {
+	if (width >= '500') {
 	   $('#bottompanel').html('<img CssClass="botimage" src="img/skinbottom_col.jpg" width="100%" />');
 	}	
 
@@ -84,11 +84,11 @@ $( window ).resize(function() {
 	   $('#bottomexp').css('height', ''+ botexpheight +'px');
 	}
 
-	if (width < '400') {
+	if (width < '500') {
 	   $('#bottompanel').html('<img CssClass="botimage" src="img/skinbottom_col2.jpg" width="100%" />');
 	}
 
-	if (width >= '400') {
+	if (width >= '500') {
 	   $('#bottompanel').html('<img CssClass="botimage" src="img/skinbottom_col.jpg" width="100%" />');
 	}
 
