@@ -21,39 +21,33 @@ $( window ).resize(function() {
 
 
 
-$( window ).scroll(function() {
+$( window ).scroll( function() {
 
 	height = $( document ).height();
-	windowheight = $( window ).scrollTop();
 	launchheight = height / 6;
-	
+	windowheight = $( window ).scrollTop();
+		
 	adheight = $('#slidecontainer').height();
 	bottom = parseInt($('#slidecontainer').css('bottom'));
-	if (windowheight >= launchheight && adheight > bottom) {
+	
+	console.log('Ad Height: ' + adheight);
+	console.log('Body Top: ' + windowheight );
+	console.log('Bottom: ' + bottom);
+	
+	if (windowheight >= launchheight) {
 		
 		if (windowheight > storewindowheight) {
 			
-			console.log(bottom);
-			bottom = bottom + 50;
-
-			$( window ).css('overflow-y', 'hidden');
-			$( window ).scrollTop(scrollTop);
-			$( window ).css('overflow-y', 'auto');
-			
+			bottom = bottom + 5;
 			$('#slidecontainer').css('bottom', ''+ bottom +'px');
+
 		} else {
-			bottom = parseInt($('#slidecontainer').css('bottom'));
-			console.log(bottom);
-			bottom = bottom - 50;
 
-			$( window ).css('overflow-y', 'hidden');
-			$( window ).scrollTop(scrollTop);
-			$( window ).css('overflow-y', 'auto');
-
+			bottom = bottom - 5;
 			$('#slidecontainer').css('bottom', ''+ bottom +'px');
 		}
 
-		if ( adheight < bottom ) {
+		if ( bottom > windowheight ) {
 			$('#slidecontainer').css('display', 'none');
 			console.log('display none');
 		}
@@ -61,7 +55,5 @@ $( window ).scroll(function() {
 	}
 	storewindowheight = windowheight;
 	scrollTop = $( window ).scrollTop();
-	console.log(adheight);
-   	console.log( height + " " + windowheight + " " + launchheight);
 	
 });
