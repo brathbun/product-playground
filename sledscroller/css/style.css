@@ -25,6 +25,11 @@ p,h2,h3 {
     padding:0px;
 }
 
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
 #content {
     background: #777;
     height:100%;

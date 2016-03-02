@@ -29,21 +29,25 @@ $( window ).scroll( function() {
 		
 	adheight = $('#slidecontainer').height();
 	bottom = parseInt($('#slidecontainer').css('bottom'));
+	top = $('#slidecontainer').scrollTop();
 	
 	console.log('Ad Height: ' + adheight);
-	console.log('Body Top: ' + windowheight );
-	console.log('Bottom: ' + bottom);
 	
 	if (windowheight >= launchheight) {
-		
+		$('body').addClass('stop-scrolling');
+	
 		if (windowheight > storewindowheight) {
-			
-			bottom = bottom + 5;
+
+			$('body').bind('touchmove', function(e){ e.preventDefault() });
+
+			bottom = bottom + 10;
 			$('#slidecontainer').css('bottom', ''+ bottom +'px');
 
 		} else {
 
-			bottom = bottom - 5;
+			$('body').bind('touchmove', function(e){ e.preventDefault() });
+			
+			bottom = bottom - 10;
 			$('#slidecontainer').css('bottom', ''+ bottom +'px');
 		}
 
@@ -51,8 +55,12 @@ $( window ).scroll( function() {
 			$('#slidecontainer').css('display', 'none');
 			console.log('display none');
 		}
-
+	
+	$('body').removeClass('stop-scrolling')
+	$('body').unbind('touchmove');
+	
 	}
+
 	storewindowheight = windowheight;
 	scrollTop = $( window ).scrollTop();
 	
