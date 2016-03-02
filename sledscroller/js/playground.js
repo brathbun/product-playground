@@ -35,13 +35,21 @@ $( window ).scroll(function() {
 			
 			console.log(bottom);
 			bottom = bottom + 50;
+
+			$( window ).css('overflow-y', 'hidden');
 			$( window ).scrollTop(scrollTop);
+			$( window ).css('overflow-y', 'auto');
+			
 			$('#slidecontainer').css('bottom', ''+ bottom +'px');
 		} else {
 			bottom = parseInt($('#slidecontainer').css('bottom'));
 			console.log(bottom);
 			bottom = bottom - 50;
+
+			$( window ).css('overflow-y', 'hidden');
 			$( window ).scrollTop(scrollTop);
+			$( window ).css('overflow-y', 'auto');
+
 			$('#slidecontainer').css('bottom', ''+ bottom +'px');
 		}
 
@@ -55,7 +63,5 @@ $( window ).scroll(function() {
 	scrollTop = $( window ).scrollTop();
 	console.log(adheight);
    	console.log( height + " " + windowheight + " " + launchheight);
-
-
 	
 });
